@@ -1,0 +1,30 @@
+{
+  "xxx-context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle atom-sikuli",
+        "command": "atom-sikuli:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "Sikuli",
+          "submenu": [
+            {
+              "label": "Toggle Command List",
+              "command": "atom-sikuli:toggle-command-list"
+            },
+            {
+              "label": "Toggle Thumbnails",
+              "command": "atom-sikuli:toggle-thumbnails"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

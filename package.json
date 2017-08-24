@@ -1,0 +1,21 @@
+{
+  "name": "atom-sikuli",
+  "main": "./lib/atom-sikuli",
+  "version": "0.0.0",
+  "description": "A short description of your package",
+  "keywords": [
+  ],
+  "xxx-activationCommands": {
+    "atom-workspace": "atom-sikuli:toggle-command-list"
+  },
+  "repository": "https://github.com/atom/atom-sikuli",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  },
+  "deserializers": {
+    "atom-sikuli/AtomSikuliView": "deserializeAtomSikuliView"
+  }
+}
