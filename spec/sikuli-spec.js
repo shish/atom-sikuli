@@ -1,6 +1,6 @@
 'use babel';
 
-import AtomSikuli from '../lib/atom-sikuli';
+import AtomSikuli from '../lib/sikuli';
 
 // Use the command `window:run-package-specs` (cmd-alt-ctrl-p) to run specs.
 //
@@ -12,32 +12,32 @@ describe('AtomSikuli', () => {
 
   beforeEach(() => {
     workspaceElement = atom.views.getView(atom.workspace);
-    activationPromise = atom.packages.activatePackage('atom-sikuli');
+    activationPromise = atom.packages.activatePackage('sikuli');
   });
 
-  describe('when the atom-sikuli:toggle event is triggered', () => {
+  describe('when the sikuli:toggle event is triggered', () => {
     it('hides and shows the modal panel', () => {
       // Before the activation event the view is not on the DOM, and no panel
       // has been created
-      expect(workspaceElement.querySelector('.atom-sikuli')).not.toExist();
+      expect(workspaceElement.querySelector('.sikuli')).not.toExist();
 
       // This is an activation event, triggering it will cause the package to be
       // activated.
-      atom.commands.dispatch(workspaceElement, 'atom-sikuli:toggle');
+      atom.commands.dispatch(workspaceElement, 'sikuli:toggle');
 
       waitsForPromise(() => {
         return activationPromise;
       });
 
       runs(() => {
-        expect(workspaceElement.querySelector('.atom-sikuli')).toExist();
+        expect(workspaceElement.querySelector('.sikuli')).toExist();
 
-        let atomSikuliElement = workspaceElement.querySelector('.atom-sikuli');
+        let atomSikuliElement = workspaceElement.querySelector('.sikuli');
         expect(atomSikuliElement).toExist();
 
         let atomSikuliPanel = atom.workspace.panelForItem(atomSikuliElement);
         expect(atomSikuliPanel.isVisible()).toBe(true);
-        atom.commands.dispatch(workspaceElement, 'atom-sikuli:toggle');
+        atom.commands.dispatch(workspaceElement, 'sikuli:toggle');
         expect(atomSikuliPanel.isVisible()).toBe(false);
       });
     });
@@ -51,11 +51,11 @@ describe('AtomSikuli', () => {
       // workspaceElement to the DOM are generally slower than those off DOM.
       jasmine.attachToDOM(workspaceElement);
 
-      expect(workspaceElement.querySelector('.atom-sikuli')).not.toExist();
+      expect(workspaceElement.querySelector('.sikuli')).not.toExist();
 
       // This is an activation event, triggering it causes the package to be
       // activated.
-      atom.commands.dispatch(workspaceElement, 'atom-sikuli:toggle');
+      atom.commands.dispatch(workspaceElement, 'sikuli:toggle');
 
       waitsForPromise(() => {
         return activationPromise;
@@ -63,9 +63,9 @@ describe('AtomSikuli', () => {
 
       runs(() => {
         // Now we can test for view visibility
-        let atomSikuliElement = workspaceElement.querySelector('.atom-sikuli');
+        let atomSikuliElement = workspaceElement.querySelector('.sikuli');
         expect(atomSikuliElement).toBeVisible();
-        atom.commands.dispatch(workspaceElement, 'atom-sikuli:toggle');
+        atom.commands.dispatch(workspaceElement, 'sikuli:toggle');
         expect(atomSikuliElement).not.toBeVisible();
       });
     });

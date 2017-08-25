@@ -1,12 +1,12 @@
 {
   "name": "atom-sikuli",
-  "main": "./lib/atom-sikuli",
+  "main": "./lib/sikuli",
   "version": "0.0.0",
   "description": "A short description of your package",
   "keywords": [
   ],
   "xxx-activationCommands": {
-    "atom-workspace": "atom-sikuli:toggle-command-list"
+    "atom-workspace": "sikuli:toggle-command-list"
   },
   "repository": "https://github.com/atom/atom-sikuli",
   "license": "MIT",
@@ -16,6 +16,6 @@
   "dependencies": {
   },
   "deserializers": {
-    "atom-sikuli/AtomSikuliView": "deserializeAtomSikuliView"
+    "sikuli/CommandPanelView": "deserializeCommandPanelView"
   }
 }
