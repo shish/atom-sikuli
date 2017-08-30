@@ -3,8 +3,7 @@
   "main": "./lib/sikuli",
   "version": "0.0.0",
   "description": "A short description of your package",
-  "keywords": [
-  ],
+  "keywords": [],
   "xxx-activationCommands": {
     "atom-workspace": "sikuli:toggle-command-list"
   },
@@ -14,6 +13,7 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
+    "etch": "^0.12.6"
   },
   "deserializers": {
     "sikuli/CommandPanelView": "deserializeCommandPanelView"
